@@ -3,8 +3,9 @@ app.controller('homeCtrl', ['$scope', '$http', 'homeService', function ($scope, 
     $scope.data = [{name:'computer angular1'},{name:'Talent'},{name:'Released'}];
     $scope.saved = [];
     $scope.x1 = function(){
-      
+      if($scope.searchText){
       $scope.saved.push($scope.searchText);
+    }
     }
   	$scope.searchMovie = function () {
   		homeService.generateText($scope.movieName).then(receivedText, textFailed);	
